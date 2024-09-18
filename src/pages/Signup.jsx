@@ -51,7 +51,6 @@ const Signup = () => {
             placeholder="Email"
             className='input-box'
             value={email}
-            autoFocus
             required
             onChange={(e) => setEmail(e.target.value)}
           />

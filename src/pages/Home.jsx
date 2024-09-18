@@ -81,7 +81,7 @@ const Home = () => {
 
     try {
       const res = await axios.get('https://note-app-backend-dqfa.onrender.com/api/note/search', {
-        params: { query },  // Ensure the parameter is sent correctly
+        params: { query }, 
         withCredentials: true,
       });
 

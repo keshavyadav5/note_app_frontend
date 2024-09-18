@@ -19,10 +19,11 @@ const Login = () => {
 
     try {
       dispatch(loginStart())
-      const res = await axios.post('https://note-app-backend-dqfa.onrender.com/api/auth/login', {
-        email,
-        password
-      }, { withCredentials: true })
+      const res = await axios.post(
+        'https://note-app-backend-dqfa.onrender.com/api/auth/login',
+        { email, password },
+        { withCredentials: true }
+      );
 
       if(res.data.success === false){
         toast.error(res.data.error)

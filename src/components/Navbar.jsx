@@ -21,14 +21,13 @@ const Navbar = ({ userInfo, handleClearSearch, onSearchNote }) => {
     setSearchQuery("")
     handleClearSearch()
   }
-
   const onLogOut = async () => {
     try {
       dispatch(signoutStart())
 
       const res = await axios.get('https://note-app-backend-dqfa.onrender.com/api/auth/logout', {
         withCredentials: true
-      })
+      });
 
       if (res.data.success === false) {
         dispatch(signoutFailure(res.data.message))
