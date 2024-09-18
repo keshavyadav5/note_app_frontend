@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { loginFailure, loginStart, loginSuccess } from '../../redux/userSlice'
 import axios from 'axios'
 import { toast } from 'react-toastify'
+import {ENV} from '../config/env'
 
 const Login = () => {
   const [email, setEmail] = useState("")
@@ -20,7 +21,7 @@ const Login = () => {
     try {
       dispatch(loginStart())
       const res = await axios.post(
-        'https://note-app-backend-dqfa.onrender.com/api/auth/login',
+        `${ENV.BACKEND_URL}/api/auth/login`,
         { email, password },
         { withCredentials: true }
       );
